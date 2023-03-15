@@ -2,13 +2,27 @@
 // Снипет (HTML): btn
 
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+  display: inline-block;
+  @include adaptiveValue("font-size", 24, 20);
+  line-height: 125%; /* 30/24 */
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #c00021;
+  border-radius: rem(10);
+  padding: 0 rem(72);
+
+  @include adaptiveValue("padding-top", 14, 10);
+  @include adaptiveValue("padding-bottom", 14, 10);
+  @include adaptiveValue("padding-left", 72, 50);
+  @include adaptiveValue("padding-right", 72, 50);
+  transition: all 0.3s ease 0s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 0 10px #c00021;
+    }
+  }
+  &._fw {
+    width: 100%;
+  }
 }

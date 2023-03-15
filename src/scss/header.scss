@@ -1,26 +1,47 @@
 //====================================================================================================
 
 .header {
-  position: relative;
-  background-color: #fff;
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transition: all 0.3s ease 0s;
-    background-color: #fff;
-    box-shadow: 0px 10px 75px rgba(35, 35, 35, 0.2);
-    visibility: hidden;
-    opacity: 0;
-    z-index: 4;
+  &._header-scroll {
+    padding-bottom: 70px;
+    @media (max-width: $mobile) {
+      @include adaptiveValue("padding-bottom", 70, 50, 767, 375, 1);
+    }
+    .header__body {
+      @include adaptiveValue("min-height", 70, 50, 767, 375, 1);
+    }
+    .header__wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0px 10px 75px rgba(35, 35, 35, 0.2);
+      z-index: 10;
+    }
   }
-  .menu-open & {
+  &__wrapper {
+    position: relative;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 0 0 rgba(35, 35, 35, 0.2);
     &::before {
-      visibility: visible;
-      opacity: 1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: all 0.3s ease 0s;
+      background-color: #fff;
+      box-shadow: 0px 10px 75px rgba(35, 35, 35, 0.2);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 5;
+    }
+    .menu-open & {
+      &::before {
+        visibility: visible;
+        opacity: 1;
+      }
     }
   }
 
@@ -28,6 +49,7 @@
     display: flex;
     align-items: center;
     min-height: rem(90);
+    transition: all 0.3s ease 0s;
 
     @media (max-width: $mobile) {
       gap: rem(20);
@@ -101,7 +123,7 @@
       background-color: #fff;
       transition: left 0.3s ease 0s;
       padding: rem(90) rem(15) rem(50);
-
+      z-index: 4;
       .menu-open & {
         left: 0;
       }

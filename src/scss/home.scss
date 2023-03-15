@@ -1,3 +1,54 @@
 //====================================================================================================
+.main {
+  &__body {
+    @media (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: 1fr percent(425, 1170);
+      @include adaptiveValue("gap", 78, 30, 1170, 991, 1);
+    }
+  }
+
+  &__content {
+    @media (min-width: $tablet) {
+      padding: rem(169) 0 0;
+    }
+    padding: rem(40) 0 rem(25);
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: rem(30);
+    @media (min-width: $tablet) {
+      margin: 0 0 rem(169);
+    }
+
+    & span {
+      @media (min-width: $tablet) {
+        position: absolute;
+        bottom: rem(12);
+        right: 0;
+        margin-top: rem(0);
+      }
+      display: block;
+      margin-top: em(20, 30);
+
+      @include adaptiveValue("font-size", 30, 20);
+      line-height: 106.7%; /* 32/30 */
+    }
+  }
+
+  &__button {
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+
+  &__image-ibg {
+    @media (max-width: $tablet) {
+      padding-bottom: 80%;
+      margin: 0 rem(-15);
+    }
+  }
+}
 
 //====================================================================================================
