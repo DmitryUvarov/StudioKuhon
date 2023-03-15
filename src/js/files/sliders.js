@@ -1,5 +1,5 @@
 /*
-Документация по работе в шаблоне: 
+Документация по работе в шаблоне:
 Документация слайдера: https://swiperjs.com/
 Сниппет(HTML): swiper
 */
@@ -7,10 +7,10 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Autoplay, EffectFade, Pagination } from 'swiper';
 /*
 Основниые модули слайдера:
-Navigation, Pagination, Autoplay, 
+Navigation, Pagination, Autoplay,
 EffectFade, Lazy, Manipulation
 Подробнее смотри https://swiperjs.com/
 */
@@ -27,41 +27,31 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.slider-projects')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
-			// Подключаем модули слайдера
-			// для конкретного случая
-			modules: [Navigation],
+		new Swiper('.slider-projects', {
+
+			modules: [Autoplay, EffectFade, Pagination],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			spaceBetween: 0,
+			spaceBetween: 10,
 			autoHeight: true,
 			speed: 800,
+			// loop: true,
 
-			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
-
-			/*
-			// Эффекты
 			effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-			*/
 
 			// Пагинация
-			/*
 			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
+				el: '.slider-projects__progress',
+				type: "progressbar",
 			},
-			*/
+
 
 			// Скроллбар
 			/*
@@ -70,12 +60,6 @@ function initSliders() {
 				draggable: true,
 			},
 			*/
-
-			// Кнопки "влево/вправо"
-			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
-			},
 
 			// Брейкпоинты
 			/*
@@ -101,6 +85,16 @@ function initSliders() {
 			*/
 			// События
 			on: {
+				init: function (swiper) {
+					document.querySelector('.slider-projects__controls-num_all').innerHTML =
+					swiper.slides.length >= 10
+					? swiper.slides.length
+					: '0' + swiper.slides.length
+				},
+				slideChange: function (swiper) {
+					document.querySelector('.slider-projects__controls-num').innerHTML =
+					swiper.realIndex < 9 ? '0' + ++swiper.realIndex : ++swiper.realIndex
+				}
 
 			}
 		});
