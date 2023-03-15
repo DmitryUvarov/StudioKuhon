@@ -2,7 +2,11 @@
 
 .title {
   font-size: rem(60);
-  @include adaptiveValue("font-size", 60, 28);
+  @include adaptiveValue("font-size", 60, 24);
   line-height: 125%; /* 75/60 */
   text-transform: uppercase;
+
+  &_white {
+    color: #ffffff;
+  }
 }

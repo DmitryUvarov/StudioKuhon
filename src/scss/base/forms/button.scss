@@ -3,11 +3,11 @@
 
 .button {
   display: inline-block;
-  @include adaptiveValue("font-size", 24, 20);
+  @include adaptiveValue("font-size", 24, 18);
   line-height: 125%; /* 30/24 */
   text-transform: uppercase;
   color: #ffffff;
-  background: #c00021;
+  background-color: #c00021;
   border-radius: rem(10);
   padding: 0 rem(72);
 
@@ -19,7 +19,15 @@
 
   @media (any-hover: hover) {
     &:hover {
-      box-shadow: 0 0 10px #c00021;
+      box-shadow: 0 0 20px 5px #c00021;
+    }
+  }
+  &_black {
+    background-color: #232323;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0 0 20px 5px #232323;
+      }
     }
   }
   &._fw {
