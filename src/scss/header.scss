@@ -59,21 +59,18 @@
 
   &__logo {
     position: relative;
-    display: flex;
-    align-items: center;
+    z-index: 5;
     column-gap: rem(6);
     @include adaptiveValue("margin-right", 50, 25, 1170, 767, 2);
-    z-index: 5;
+
     & span {
       font-size: 18.6667px;
-      line-height: 105.5%;
       max-width: rem(66);
       @media (max-width: $mobileSmall) {
         font-size: rem(15);
       }
     }
     &::before {
-      color: #ff6700;
       font-size: rem(33);
       @media (max-width: $mobileSmall) {
         font-size: rem(27);

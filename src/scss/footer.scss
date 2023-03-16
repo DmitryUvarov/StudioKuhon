@@ -1,3 +1,110 @@
 //====================================================================================================
+.footer {
+  background-color: #232323;
+  color: #ffffff;
+  @include adaptiveValue("padding-top", 100, 30);
+  @include adaptiveValue("padding-bottom", 105, 40);
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    column-gap: rem(14);
+
+    @media (min-width: em(900.98)) {
+      margin: 0 auto;
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 30);
+    }
+
+    & span {
+      max-width: rem(164);
+      font-size: 46.6666px;
+      @include adaptiveValue("font-size", 46, 28);
+    }
+    &::before {
+      font-size: rem(83);
+      @include adaptiveValue("font-size", 83, 55);
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30);
+    row-gap: rem(35);
+
+    @media (max-width: em(900.98)) {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    @media (min-width: em(900.98)) {
+      flex-grow: 1;
+    }
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 32, 15);
+    justify-content: flex-end;
+  }
+
+  &__item {
+  }
+
+  &__contacts {
+  }
+}
+
+.item-footer {
+  font-size: rem(30);
+  @include adaptiveValue("font-size", 30, 20);
+  line-height: 123.3%; /* 37/30 */
+  &__link {
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 800;
+  }
+}
+.contacts-footer {
+  max-width: rem(536);
+  color: #f7f9fb;
+
+  &__item {
+    &_adress {
+      @include adaptiveValue("font-size", 30, 18);
+      line-height: 123.3%; /* 37/30 */
+    }
+  }
+
+  &__phones {
+    display: flex;
+    line-height: 125%; /* 30/24 */
+    @include adaptiveValue("font-size", 24, 20);
+    @include adaptiveValue("gap", 32, 15);
+    justify-content: space-between;
+
+    @media (max-width: em(900.98)) {
+      flex-direction: column;
+    }
+
+    & a {
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
 
 //====================================================================================================
