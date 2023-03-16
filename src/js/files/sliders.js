@@ -48,8 +48,9 @@ function initSliders() {
 
 			// Пагинация
 			pagination: {
-				el: '.slider-projects__progress',
+				el: '.slider-projects .slider-projects__progressbar',
 				type: "progressbar",
+				progressbarFillClass: 'progressbar-trumb'
 			},
 
 
@@ -97,6 +98,51 @@ function initSliders() {
 				}
 
 			}
+		});
+	}
+
+	if (document.querySelector('.reviews-slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.reviews-slider', {
+
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			speed: 800,
+
+			// Пагинация
+			pagination: {
+				el: '.reviews-slider .reviews-slider__progressbar',
+				type: "progressbar",
+				progressbarFillClass: 'progressbar-trumb'
+			},
+			navigation: {
+				nextEl: '.reviews-slider .button-next',
+				prevEl: '.reviews-slider .button-prev',
+			},
+
+			// Брейкпоинты
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 15,
+					autoHeight: true,
+				},
+				478: {
+					slidesPerView: 1.7,
+					spaceBetween: 20,
+					autoHeight: false,
+				},
+				768: {
+					slidesPerView: 2.3,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 2.3,
+					spaceBetween: 30,
+				},
+			},
 		});
 	}
 }

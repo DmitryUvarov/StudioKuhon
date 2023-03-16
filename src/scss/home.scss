@@ -192,22 +192,7 @@
     color: #c00021;
   }
 
-  &__progress {
-    position: relative;
-    flex: 1 1 auto;
-    width: 100%;
-    height: rem(6);
-    background: rgba(115, 92, 93, 0.1);
-
-    & .swiper-pagination-progressbar-fill {
-      background-color: #c00021;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      transform-origin: left top;
-    }
+  &__progressbar {
   }
 }
 
@@ -282,6 +267,94 @@
   &__link {
     @include adaptiveValue("margin-top", 50, 30);
     margin-left: auto;
+  }
+}
+
+//========================================================================================================================================================
+
+.reviews {
+  background: #c00021;
+  @include adaptiveValue("padding-top", 60, 30);
+  @include adaptiveValue("padding-bottom", 90, 30);
+  &__body {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 100, 30);
+  }
+
+  &__slider {
+  }
+}
+
+.reviews-slider {
+  &.swiper {
+    overflow: visible;
+  }
+  &__wrapper {
+  }
+
+  &__slide {
+  }
+
+  &__controls {
+    @include adaptiveValue("margin-top", 75, 15);
+    display: flex;
+    align-items: center;
+    gap: rem(13);
+  }
+
+  &__progressbar {
+    flex-grow: 1;
+    height: rem(6);
+    background: rgba(249, 249, 249, 0.23);
+  }
+
+  &__navigation {
+  }
+
+  &__arrow {
+  }
+}
+
+.slide-reviews {
+  display: flex;
+  flex-direction: column;
+  @include adaptiveValue("padding", 32, 15);
+  @include adaptiveValue("border-radius", 32, 15);
+  background: #ffffff;
+  color: rgba(35, 35, 35, 0.75);
+  &__text {
+    font-size: rem(24);
+    @include adaptiveValue("font-size", 24, 16);
+    line-height: 140%;
+    flex-grow: 1;
+
+    & p {
+      &:not(:last-child) {
+        margin-bottom: rem(15);
+      }
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__author {
+    font-size: rem(24);
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: 125%; /* 30/24 */
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__sity {
+    font-size: rem(16);
+    line-height: 125%; /* 20/16 */
+    color: rgba(35, 35, 35, 0.5);
   }
 }
 

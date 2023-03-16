@@ -2,11 +2,67 @@
 
 .title {
   font-size: rem(60);
-  @include adaptiveValue("font-size", 60, 24);
+  @include adaptiveValue("font-size", 60, 28);
   line-height: 125%; /* 75/60 */
   text-transform: uppercase;
 
   &_white {
     color: #ffffff;
+  }
+}
+
+//========================================================================================================================================================
+
+.navigation {
+  display: flex;
+  @include adaptiveValue("column-gap", 20, 10);
+  .button-prev,
+  .button-next {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(40);
+    height: rem(40);
+    transition: all 0.3s ease 0s;
+    &::before {
+      color: #ffffff;
+      font-size: rem(16);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: rgba(249, 249, 249, 0.23);
+      }
+    }
+  }
+  .button-prev {
+    transform: scale(-1);
+  }
+  .button-next {
+  }
+}
+
+//========================================================================================================================================================
+
+.progressbar {
+  position: relative;
+  flex-grow: 1;
+  height: rem(6);
+  background: rgba(115, 92, 93, 0.1);
+
+  & .progressbar-trumb {
+    background-color: #c00021;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left top;
+  }
+
+  &_white {
+    & .progressbar-trumb {
+      background-color: #fff;
+    }
   }
 }
