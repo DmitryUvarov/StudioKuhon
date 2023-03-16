@@ -53,37 +53,6 @@ function initSliders() {
 				progressbarFillClass: 'progressbar-trumb'
 			},
 
-
-			// Скроллбар
-			/*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
-
-			// Брейкпоинты
-			/*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
 			// События
 			on: {
 				init: function (swiper) {
@@ -127,12 +96,10 @@ function initSliders() {
 				320: {
 					slidesPerView: 1,
 					spaceBetween: 15,
-					autoHeight: true,
 				},
 				478: {
 					slidesPerView: 1.7,
 					spaceBetween: 20,
-					autoHeight: false,
 				},
 				768: {
 					slidesPerView: 2.3,
