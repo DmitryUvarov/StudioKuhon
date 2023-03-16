@@ -1,0 +1,44 @@
+//========================================================================================================================================================
+
+.about {
+  padding-top: rem(30);
+  @include adaptiveValue("padding-bottom", 90, 40);
+
+  &__body {
+    display: flex;
+    @include adaptiveValue("gap", 100, 30, 1170, 991, 1);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30, 1170, 991, 1);
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 60, 30);
+  }
+
+  &__text {
+    @include adaptiveValue("font-size", 20, 18);
+    line-height: 180%;
+    color: rgba(35, 35, 35, 0.75);
+  }
+
+  &__image-ibg {
+    @media (min-width: $mobile) {
+      flex: 1 0 percent(570, 1170);
+      padding-bottom: percent(700, 1170);
+    }
+    @media (max-width: $mobile) {
+      padding-bottom: 80%;
+    }
+  }
+}
+
+//========================================================================================================================================================
