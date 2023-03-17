@@ -13,7 +13,7 @@ function padeLoad() {
 
 
 
-        if (!targetElement.closest('.filters-design__body') && document.querySelector('.filter-design-open')) {
+        if (!targetElement.closest('.filters-design__body') || targetElement.closest('.filters-design__close-btn') && document.querySelector('.filter-design-open')) {
             htmlTag.classList.remove('filter-design-open')
         }
         if (targetElement.closest('.top-filters-design__button')) {

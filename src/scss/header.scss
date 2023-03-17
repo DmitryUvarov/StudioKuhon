@@ -260,6 +260,30 @@
     @include adaptiveValue("column-gap", 50, 25);
     row-gap: rem(5);
     margin: 0 rem(-10);
+    @include adaptiveValue("margin-right", -10, -2);
+    @include adaptiveValue("margin-left", -10, -2);
+  }
+
+  &__close {
+    margin-bottom: rem(15);
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 125%;
+  }
+  &__close-btn {
+    margin-left: auto;
+    width: rem(40);
+    height: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      font-size: rem(24);
+      color: #000;
+      transform: rotate(45deg);
+    }
   }
 }
 
