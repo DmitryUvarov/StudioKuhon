@@ -14,12 +14,10 @@ function padeLoad() {
 
 
         if (!targetElement.closest('.filters-design__body') && document.querySelector('.filter-design-open')) {
-            htmlTag.classList.remove('lock')
             htmlTag.classList.remove('filter-design-open')
         }
         if (targetElement.closest('.top-filters-design__button')) {
-            htmlTag.classList.toggle('lock')
-            htmlTag.classList.toggle('filter-design-open')
+            htmlTag.classList.add('filter-design-open')
         }
 
 
@@ -67,7 +65,7 @@ function padeLoad() {
         document.querySelector(`.spoller-filter-desin__item[data-param="${dataAtrr}"]`).classList.add('active')
     }
 
-    function checkSearchParam() {
+    function checkActiveParam() {
         const items = document.querySelectorAll('.current-filter-desin__item')
 
         if (items.length) {
@@ -76,6 +74,6 @@ function padeLoad() {
             })
         }
     }
-    checkSearchParam()
+    checkActiveParam()
 
 }

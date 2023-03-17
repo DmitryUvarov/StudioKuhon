@@ -74,6 +74,8 @@ body {
   }
 
   .filter-design-open & {
+    overflow: hidden;
+    touch-action: none;
     &::after {
       pointer-events: all;
       opacity: 1;
