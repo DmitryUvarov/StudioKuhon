@@ -270,6 +270,7 @@
     align-items: center;
     @include adaptiveValue("font-size", 24, 20);
     line-height: 125%;
+    font-weight: 800;
   }
   &__close-btn {
     margin-left: auto;
