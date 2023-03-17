@@ -36,6 +36,11 @@
       visibility: hidden;
       opacity: 0;
       z-index: 5;
+
+      .filter-design-open & {
+        opacity: 1;
+        visibility: visible;
+      }
     }
     .menu-open & {
       &::before {
@@ -188,6 +193,220 @@
   }
 
   &__icon {
+  }
+}
+
+//========================================================================================================================================================
+
+.bottom-header {
+  padding-top: rem(30);
+  padding-bottom: rem(30);
+  box-shadow: 0px 50px 100px rgba(35, 35, 35, 0.2);
+
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 15);
+    }
+  }
+
+  &__filters {
+  }
+}
+
+.filters-design {
+  &__top {
+  }
+
+  &__body {
+    @media (max-width: $mobile) {
+      position: fixed;
+      width: min(rem(400), 60%);
+      height: 100%;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+
+      background-color: #fff;
+      z-index: 3;
+      padding: 0 rem(15) rem(40);
+      @include adaptiveValue("padding-top", 100, 70);
+      transition: left 0.3s ease 0s;
+
+      .filter-design-open & {
+        left: 0;
+      }
+    }
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: rem(30);
+    row-gap: rem(15);
+    margin-top: rem(20);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+  &__current {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include adaptiveValue("column-gap", 50, 25);
+    row-gap: rem(5);
+    margin: 0 rem(-10);
+  }
+}
+
+.spoller-filter-desin {
+  &__col {
+    min-width: rem(220);
+
+    @media (max-width: $tablet) {
+      flex: 0 1 calc(50% - rem(15));
+    }
+  }
+
+  &__title {
+    @include adaptiveValue("padding-top", 10, 2);
+    @include adaptiveValue("padding-bottom", 10, 2);
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    @include adaptiveValue("padding-right", 50, 25);
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 30px;
+    color: #232323;
+    transition: all 0.3s ease 0s;
+
+    &::before,
+    &::after {
+      content: "";
+      background: #ff6700;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      @include adaptiveValue("width", 20, 15);
+      height: rem(2);
+      transition: all 0.3s ease 0s;
+      transform: translateY(-50%);
+    }
+    &::before {
+    }
+    &::after {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    &._spoller-active {
+      &::after {
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__body {
+    padding-top: rem(14);
+
+    @media (min-width: $tablet) {
+      padding-bottom: rem(35);
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    @include adaptiveValue("font-size", 22, 16);
+    line-height: 122.7%; /* 27/22 */
+    color: rgba(17, 17, 17, 0.5);
+    transition: all 0.3s ease 0s;
+
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+
+    &.active {
+      display: flex;
+      align-items: center;
+      column-gap: rem(14);
+      color: #111111;
+
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: #111111;
+        border-radius: 50%;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #111111;
+      }
+    }
+  }
+}
+
+.current-filter-desin {
+  &__item {
+    cursor: pointer;
+    @include adaptiveValue("padding", 10, 2);
+    @include adaptiveValue("font-size", 22, 14);
+    line-height: 122.7%; /* 27/22 */
+    color: #111111;
+    gap: rem(8);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+
+    &.remove {
+      color: #c00021;
+    }
+
+    &::after {
+      content: "\e903";
+      @extend %ic;
+      font-size: rem(12);
+      transform: rotate(45deg);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #c00021;
+      }
+    }
+  }
+}
+
+.top-filters-design {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: $mobile) {
+    display: none;
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 125%;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptiveValue("width", 50, 40);
+    @include adaptiveValue("height", 50, 40);
+
+    &::before {
+      @include adaptiveValue("font-size", 28, 20);
+    }
   }
 }
 
