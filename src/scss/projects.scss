@@ -1,0 +1,123 @@
+.projects-page {
+  @include adaptiveValue("padding-top", 60, 30);
+  @include adaptiveValue("padding-bottom", 82, 40);
+  &__body {
+  }
+
+  &__items {
+    @include adaptiveValue("column-gap", 70, 30, 1170, 991, 1);
+    @include adaptiveValue("margin-bottom", 100, 30);
+
+    @media (min-width: $mobile) {
+      columns: 2;
+      break-inside: avoid;
+    }
+  }
+
+  &__item {
+    @include adaptiveValue("margin-bottom", 70, 30, 1170, 991, 1);
+
+    @media (min-width: $mobile) {
+      max-width: rem(585);
+    }
+  }
+  &__more {
+    @include adaptiveValue("font-size", 20, 18);
+    line-height: 125%; /* 25/20 */
+    text-transform: uppercase;
+    color: #000000;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    @include adaptiveValue("gap", 17, 12);
+
+    &::before {
+      @include adaptiveValue("font-size", 63, 45);
+      color: #c00021;
+      transition: all 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          transform: translateY(rem(15));
+        }
+      }
+    }
+  }
+}
+.item-project {
+  overflow: hidden;
+  position: relative;
+
+  @media (any-hover: hover) {
+    &:hover {
+      .item-project__content {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  &__image {
+    @media (max-width: $mobile) {
+      position: relative;
+      padding-bottom: 80%;
+    }
+
+    & img {
+      max-width: 100%;
+
+      @media (max-width: $mobile) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__content {
+    @include adaptiveValue("padding-bottom", 30, 20);
+    @include adaptiveValue("padding-top", 30, 20);
+    @include adaptiveValue("padding-right", 30, 15);
+    @include adaptiveValue("padding-left", 30, 15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #232323;
+
+    @media (any-hover: hover) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: all 0.3s ease 0s;
+      visibility: hidden;
+      opacity: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.45) 100%);
+    }
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 30, 20);
+    line-height: 123.3%; /* 37/30 */
+    text-transform: uppercase;
+    color: #ffffff;
+    @media (any-hover: none) {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 40, 30);
+      }
+    }
+  }
+
+  &__text {
+    @include adaptiveValue("font-size", 22, 16);
+    line-height: 140%;
+    color: #ffffff;
+  }
+}

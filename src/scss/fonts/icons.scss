@@ -1,23 +1,26 @@
 %ic {
-  font-family: "icons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+   font-family: "icons";
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 [class*="_icon-"] {
-  &:before {
-    @extend %ic;
-    display: block;
-  }
+   &:before {
+      @extend %ic;
+      display: block;
+   }
 }
 
 ._icon-arrow-right:before {
-  content: "\e900";
+   content: "\e900";
 }
 ._icon-logo:before {
-  content: "\e901";
+   content: "\e902";
+}
+._icon-arrows-down:before {
+   content: "\e901";
 }
