@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Проэкты"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="product">
+                <div class="product__container">
+                    <h1 class="product__title title">наЗВА Дизайну</h1>
+                    <div class="product__images" data-gallery>
+                        <a href="@img/product/01.jpg" class="product__image-ibg">
+                            <img src="@img/product/01.jpg" alt="">
+                        </a>
+                        <a href="@img/product/01.jpg" class="product__image-ibg">
+                            <img src="@img/product/02.jpg" alt="">
+                        </a>
+                        <a href="@img/product/01.jpg" class="product__image-ibg">
+                            <img src="@img/product/03.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="product__body">
+                        <h2 class="text-product__title">Характеристика</h2>
+                        <div class="product__text text-product">
+                            <p>Vestibulum ultrices mollis elit, id sagittis metus rutrum sed. Vivamus molestie erat ac neque consequat, eu aliquet tellus sodales. Nunc tristique orci at ex cursus, ac condimentum felis varius. Condimentum blandit dolor vel. Phasellus eu bibendum diam, vel pellentesque magna. Suspendisse id sagittis leo, placerat blandit massa. Vestibulum ultrices mollis elit, id sagittis metus rutrum sed. Vivamus molestie erat ac neque consequat, eu aliquet tellus sodales. Nunc tristique orci at ex cursus, ac condimentum felis varius.</p>
+                        </div>
+                        <!-- <div class="product__info info-product">
+                            <div class="info-product__text">
+                                <p></p>
+                            </div>
+
+                        </div> -->
+                    </div>
+
+                    <button class="product__button button">додати до колекції</button>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+
+    @@include('html/_js.htm',{})
+</body>
+
+</html>
