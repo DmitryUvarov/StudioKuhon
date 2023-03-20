@@ -1,0 +1,167 @@
+.product {
+  padding-top: rem(30);
+  @include adaptiveValue("padding-bottom", 60, 30);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    @include adaptiveValue("margin-bottom", 30, 20);
+  }
+
+  &__images {
+    display: grid;
+    @include adaptiveValue("gap", 30, 15, 1170, 991, 1);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: 1fr rem(340);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 20);
+    }
+  }
+  &__image-ibg {
+    padding-bottom: 75%;
+
+    &:first-child {
+      padding-bottom: percent(550, 800);
+      @media (min-width: $mobile) {
+        grid-row: 1 / -1;
+      }
+      @media (max-width: $mobile) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__body {
+    display: grid;
+    @include adaptiveValue("gap", 100, 30, 1170, 991, 1);
+
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr rem(470);
+    }
+
+    &_column {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+  }
+
+  &__button {
+    @include adaptiveValue("margin-top", 60, 30);
+    margin-left: auto;
+
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+}
+
+.text-product {
+  &__title {
+    @include adaptiveValue("font-size", 40, 24);
+    line-height: 125%; /* 50/40 */
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 15);
+    }
+  }
+  & p {
+    @include adaptiveValue("font-size", 22, 16);
+    line-height: 160%;
+    color: rgba(35, 35, 35, 0.5);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 15, 10);
+    }
+  }
+
+  &_column {
+    @media (min-width: $mobile) {
+      columns: 2;
+      @include adaptiveValue("column-gap", 100, 30, 1170, 991, 1);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.info-product {
+  &__colors {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 20);
+    }
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 40, 24);
+    line-height: 125%; /* 50/40 */
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 24, 15);
+    }
+  }
+
+  &__sizes {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 20);
+    }
+  }
+
+  &__top {
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 122.2%; /* 22/18 */
+    color: rgba(35, 35, 35, 0.5);
+  }
+
+  &__size {
+  }
+
+  &__price {
+    &:not(:last-child) {
+      margin-top: rem(10);
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+.price-product {
+  display: flex;
+  align-items: center;
+  @include adaptiveValue("column-gap", 50, 30);
+  &__title {
+    @include adaptiveValue("font-size", 40, 24);
+    line-height: 125%; /* 50/40 */
+  }
+  &__price {
+    @include adaptiveValue("font-size", 40, 24);
+    line-height: 125%; /* 50/40 */
+    color: #c00021;
+
+    & span {
+      font-weight: 800;
+    }
+  }
+}
+
+.colors-product {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: rem(70);
+  @include adaptiveValue("column-gap", 70, 50);
+  row-gap: rem(15);
+  &__item {
+  }
+}
