@@ -101,4 +101,8 @@
       background-color: #fff;
     }
   }
+
+  &.swiper-pagination-lock {
+    display: none;
+  }
 }

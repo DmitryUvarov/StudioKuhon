@@ -46,6 +46,15 @@ function padeLoad() {
         }
 
 
+        if (targetElement.closest('.slide-contact-cart__close')) {
+            targetElement.closest('.swiper-slide').remove()
+
+            if (!document.querySelector('.contact-cart__slide')) {
+                document.querySelector('.contact-cart__slider').remove()
+            }
+        }
+
+
 
     })
 

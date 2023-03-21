@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Проэкты"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="contact">
+                <div class="contact__container">
+                    <div class="contact__body">
+                        <div class="contact__content">
+                            <h1 class="contact__title title">Зв’язатись</h1>
+                            <div class="contact__text">Зв’яжіться з нами, після чого отримайте відповідь від менеджера з приводу вашого замовлення.</div>
+
+                            <form action="" class="contact-form">
+                                <label for="inp1" class="contact-form__line">
+                                    <input id="inp1" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="f" class="contact-form__input input">
+                                    <span class="contact-form__label">Ім’я</span>
+                                </label>
+                                <label for="inp2" class="contact-form__line">
+                                    <input id="inp2" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="f" class="contact-form__input input">
+                                    <span class="contact-form__label">Прізвищє</span>
+                                </label>
+                                <label for="inp33" class="contact-form__line">
+                                    <input id="inp3" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="f" class="contact-form__input input">
+                                    <span class="contact-form__label">Номер телефону</span>
+                                </label>
+                                <label for="inp4" class="contact-form__line">
+                                    <input id="inp4" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="f" class="contact-form__input input">
+                                    <span class="contact-form__label">E-mail</span>
+                                </label>
+                                <button class="contact-form__button button">Зв’язатись</button>
+                            </form>
+                        </div>
+
+                        <div class="contact__cart contact-cart">
+                            <h3 class="contact-cart__title">Товари</h3>
+                            <p class="contact-cart__text">Тут будуть товари, які ви додаєте собі в замовлення...</p>
+                            <div class="contact-cart__slider swiper">
+                                <div class="contact-cart__wrapper swiper-wrapper">
+                                    <div class="contact-cart__slide slide-contact-cart swiper-slide">
+                                        <div class="slide-contact-cart__image-ibg">
+                                            <img src="@img/cart/01.jpg" alt="">
+                                            <div class="slide-contact-cart__close"></div>
+                                        </div>
+                                        <div class="slide-contact-cart__name">Назва продукту</div>
+                                    </div>
+                                    <div class="contact-cart__slide slide-contact-cart swiper-slide">
+                                        <div class="slide-contact-cart__image-ibg">
+                                            <img src="@img/cart/02.jpg" alt="">
+                                            <div class="slide-contact-cart__close"></div>
+                                        </div>
+                                        <div class="slide-contact-cart__name">Назва продукту Назва продукту Назва продукту</div>
+                                    </div>
+                                    <div class="contact-cart__slide slide-contact-cart swiper-slide">
+                                        <div class="slide-contact-cart__image-ibg">
+                                            <img src="@img/cart/01.jpg" alt="">
+                                            <div class="slide-contact-cart__close"></div>
+                                        </div>
+                                        <div class="slide-contact-cart__name">Назва продукту</div>
+                                    </div>
+                                    <div class="contact-cart__slide slide-contact-cart swiper-slide">
+                                        <div class="slide-contact-cart__image-ibg">
+                                            <img src="@img/cart/02.jpg" alt="">
+                                            <div class="slide-contact-cart__close"></div>
+                                        </div>
+                                        <div class="slide-contact-cart__name">Назва продукту</div>
+                                    </div>
+                                    <div class="contact-cart__slide slide-contact-cart swiper-slide">
+                                        <div class="slide-contact-cart__image-ibg">
+                                            <img src="@img/cart/01.jpg" alt="">
+                                            <div class="slide-contact-cart__close"></div>
+                                        </div>
+                                        <div class="slide-contact-cart__name">Назва продукту</div>
+                                    </div>
+                                    <div class="contact-cart__slide slide-contact-cart swiper-slide">
+                                        <div class="slide-contact-cart__image-ibg">
+                                            <img src="@img/cart/02.jpg" alt="">
+                                            <div class="slide-contact-cart__close"></div>
+                                        </div>
+                                        <div class="slide-contact-cart__name">Назва продукту Назва продукту Назва продукту</div>
+                                    </div>
+                                    <div class="contact-cart__slide slide-contact-cart swiper-slide">
+                                        <div class="slide-contact-cart__image-ibg">
+                                            <img src="@img/cart/01.jpg" alt="">
+                                            <div class="slide-contact-cart__close"></div>
+                                        </div>
+                                        <div class="slide-contact-cart__name">Назва продукту</div>
+                                    </div>
+                                    <div class="contact-cart__slide slide-contact-cart swiper-slide">
+                                        <div class="slide-contact-cart__image-ibg">
+                                            <img src="@img/cart/02.jpg" alt="">
+                                            <div class="slide-contact-cart__close"></div>
+                                        </div>
+                                        <div class="slide-contact-cart__name">Назва продукту</div>
+                                    </div>
+                                </div>
+
+                                <div class="contact-cart__navigation navigation">
+                                    <button class="button-prev _icon-arrow-right"></button>
+                                    <button class="button-next _icon-arrow-right"></button>
+                                </div>
+
+                                <div class="contact-cart__progressbar progressbar progressbar_white"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

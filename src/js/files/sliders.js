@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Autoplay, EffectFade, Pagination } from 'swiper';
+import Swiper, { Navigation, Autoplay, EffectFade, Pagination, Grid } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -162,6 +162,55 @@ function initSliders() {
         }
 
     }
+
+	// contact-cart__slider
+
+	if (document.querySelector('.contact-cart__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.contact-cart__slider', {
+
+			modules: [Navigation, Pagination, Grid],
+			observer: true,
+			observeParents: true,
+			speed: 800,
+			grid: {
+				rows: 2,
+				fill: 'row'
+			},
+			// Пагинация
+			pagination: {
+				el: '.contact-cart__slider .contact-cart__progressbar',
+				type: "progressbar",
+				progressbarFillClass: 'progressbar-trumb'
+			},
+			navigation: {
+				nextEl: '.contact-cart__slider .button-next',
+				prevEl: '.contact-cart__slider .button-prev',
+			},
+
+			// Брейкпоинты
+
+			breakpoints: {
+				320: {
+					slidesPerView: 2,
+					spaceBetween: 15,
+				},
+				478: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+			},
+
+		});
+	}
 
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)

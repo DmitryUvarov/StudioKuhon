@@ -1,0 +1,256 @@
+.contact {
+  &__container {
+  }
+
+  &__body {
+    @media (min-width: $tablet) {
+      //   display: grid;
+      //   grid-template-columns: repeat(2, auto);
+      display: flex;
+      @include adaptiveValue("gap", 62, 30, 1170, 991, 1);
+    }
+    @media (max-width: $tablet) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    padding-bottom: rem(150);
+
+    @include adaptiveValue("padding-top", 60, 40);
+    @include adaptiveValue("padding-bottom", 60, 40, 991, 320, 1);
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 15);
+    }
+  }
+
+  &__text {
+    max-width: 582px;
+    @include adaptiveValue("font-size", 20, 16);
+    line-height: 160%;
+    color: rgba(35, 35, 35, 0.5);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 40);
+    }
+  }
+
+  &__cart {
+  }
+}
+
+.contact-form {
+  max-width: rem(790);
+  display: flex;
+  flex-direction: column;
+
+  &__line {
+    position: relative;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 5px;
+    @include adaptiveValue("left", 20, 10);
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: 125%; /* 30/24 */
+    color: rgba(35, 35, 35, 0.5);
+    transition: all 0.3s ease 0s;
+    pointer-events: none;
+  }
+
+  &__input {
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: 125%; /* 30/24 */
+    padding: rem(5) 0;
+    @include adaptiveValue("padding-left", 20, 10);
+    @include adaptiveValue("padding-right", 20, 10);
+
+    &:not(:placeholder-shown),
+    &:focus {
+      & + .contact-form__label {
+        @include adaptiveValue("font-size", 22, 16);
+        top: -80%;
+        pointer-events: all;
+
+        @media (max-width: $mobile) {
+          top: -60%;
+        }
+      }
+    }
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &__button {
+    @media (min-width: $mobile) {
+      width: max-content;
+    }
+  }
+}
+
+.contact-cart {
+  position: relative;
+  background: #232323;
+  //   border-bottom: 2px solid rgba(249, 249, 249, 0.5);
+  @include adaptiveValue("padding-top", 85, 30);
+  @include adaptiveValue("padding-bottom", 55, 20);
+
+  @media (min-width: $tablet) {
+    @include adaptiveValue("padding-left", 50, 30, 1170, 991, 1);
+  }
+  @media (max-width: $tablet) {
+    background: #232323;
+    margin: 0 rem(-15);
+    padding-right: rem(15);
+    padding-left: rem(15);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background: #232323;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 99%;
+    z-index: -1;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: rem(2);
+    background-color: rgba(249, 249, 249, 0.5);
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 32, 20);
+    line-height: 125%; /* 40/32 */
+    text-transform: uppercase;
+    color: #ffffff;
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__text {
+    max-width: 216px;
+    font-size: rem(16);
+    line-height: 160%;
+    color: #ffffff;
+
+    &:not(:last-child) {
+      display: none;
+    }
+  }
+
+  &__slider {
+    padding-top: rem(30);
+    @media (min-width: $tablet) {
+      max-width: rem(470);
+      min-width: rem(470);
+    }
+  }
+
+  &__wrapper {
+    flex-wrap: wrap;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__slide {
+  }
+
+  &__navigation {
+    justify-content: center;
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__progressbar {
+  }
+}
+
+.slide-contact-cart {
+  &__image-ibg {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 100%;
+    z-index: 1;
+
+    @media (any-hover: hover) {
+      &:hover {
+      }
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: rem(40);
+    height: rem(40);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease 0s;
+
+    &::before {
+      @extend %ic;
+      content: "\e903";
+      color: #ffffff;
+      font-size: rem(35);
+      transform: rotate(45deg) translate(-1px, 0px);
+    }
+    @media (any-hover: none) {
+      width: rem(40);
+      height: rem(40);
+      right: 0;
+      opacity: 1;
+
+      &::before {
+        font-size: rem(25);
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    @media (any-hover: hover) {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  &__name {
+    font-size: rem(14);
+    line-height: 121.4%; /* 17/14 */
+    color: #ffffff;
+    margin-top: rem(20);
+  }
+}
