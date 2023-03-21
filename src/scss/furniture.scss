@@ -237,7 +237,7 @@
     width: 14px;
     height: 14px;
     display: block;
-    border-radius: 50%;
+    border-radius: 50% !important;
 
     &.disabled {
       pointer-events: none;
