@@ -33,6 +33,20 @@ function padeLoad() {
         }
 
 
+        if (htmlTag.closest('.menu-open') && targetElement.closest('.header__cart-button')) {
+            htmlTag.classList.remove('lock')
+            htmlTag.classList.remove('menu-open')
+        }
+
+        if (htmlTag.closest('.cart-open') && !targetElement.closest('.header') || targetElement.closest('.slider-cart__close') || targetElement.closest('.icon-menu')) {
+            htmlTag.classList.remove('cart-open')
+        }
+        if (targetElement.closest('.header__cart-button')) {
+            htmlTag.classList.toggle('cart-open')
+        }
+
+
+
     })
 
 

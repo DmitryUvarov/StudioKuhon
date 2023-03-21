@@ -73,7 +73,8 @@ body {
     z-index: 2;
   }
 
-  .filter-design-open & {
+  .filter-design-open &,
+  .cart-open & {
     overflow: hidden;
     touch-action: none;
     &::after {

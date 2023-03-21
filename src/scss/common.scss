@@ -31,6 +31,7 @@
 .navigation {
   display: flex;
   @include adaptiveValue("column-gap", 20, 10);
+
   .button-prev,
   .button-next {
     display: inline-flex;
@@ -52,8 +53,28 @@
   }
   .button-prev {
     transform: scale(-1);
+
+    &::before {
+      margin-top: rem(3);
+    }
   }
   .button-next {
+  }
+
+  &_orange {
+    @include adaptiveValue("column-gap", 30, 15);
+    .button-prev,
+    .button-next {
+      &::before {
+        color: #ff6700;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background: rgba(35, 35, 35, 0.1);
+        }
+      }
+    }
   }
 }
 

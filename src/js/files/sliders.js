@@ -112,6 +112,57 @@ function initSliders() {
 			},
 		});
 	}
+
+	for (const mobileSlider of document.querySelectorAll('.slider-cart')) {
+        if (mobileSlider) {
+            (function () {
+                "use strict";
+
+                const breakpoint = window.matchMedia("(max-width:767px)");
+                let slider;
+
+                const enableSwiper = function () {
+                    slider = new Swiper('.slider-cart', {
+						modules: [Navigation],
+						observer: true,
+						observeParents: true,
+						speed: 800,
+						slidesPerView: 'auto',
+						spaceBetween: 43,
+						navigation: {
+							nextEl: '.cart .button-next',
+							prevEl: '.cart .button-prev',
+						},
+						breakpoints: {
+							768: {
+								slidesPerView: 'auto',
+								spaceBetween: 20,
+							},
+							992: {
+								slidesPerView: 'auto',
+								spaceBetween: 43,
+							},
+						},
+					});
+                };
+
+                const breakpointChecker = function () {
+                    if (breakpoint.matches === true) {
+                        if (slider !== undefined) slider.destroy(true, true);
+
+                        return;
+                    } else if (breakpoint.matches === false) {
+                        return enableSwiper();
+                    }
+                };
+
+                breakpoint.addListener(breakpointChecker);
+                breakpointChecker();
+            })();
+        }
+
+    }
+
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
