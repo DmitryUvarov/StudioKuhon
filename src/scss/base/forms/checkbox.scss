@@ -72,6 +72,6 @@
   & span {
     @include adaptiveValue("width", 38, 26);
     @include adaptiveValue("height", 38, 26);
-    border-radius: 50%;
+    border-radius: 50% !important;
   }
 }
