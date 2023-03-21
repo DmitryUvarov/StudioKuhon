@@ -165,3 +165,101 @@
   &__item {
   }
 }
+
+//========================================================================================================================================================
+
+.similar {
+  @include adaptiveValue("padding-top", 60, 30);
+  @include adaptiveValue("padding-bottom", 80, 30);
+  background: #232323;
+  border-bottom: 2px solid rgba(249, 249, 249, 0.5);
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 40, 24);
+    line-height: 125%; /* 50/40 */
+    color: #ffffff;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 30);
+    }
+  }
+
+  &__slider {
+    &.swiper {
+      overflow: visible;
+    }
+  }
+
+  &__wrapper {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 90, 20);
+    }
+  }
+
+  &__slide {
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    column-gap: rem(15);
+  }
+
+  &__progressbar {
+  }
+
+  &__navigation {
+  }
+}
+
+.slide-similar {
+  display: flex;
+  flex-direction: column;
+  &__image-ibg {
+    display: block;
+    padding-bottom: 100%;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: 125%; /* 30/24 */
+    color: #ffffff;
+    flex: 1 1 auto;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__colors.colors {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptiveValue("column-gap", 40, 20);
+    @include adaptiveValue("row-gap", 20, 15);
+
+    & .colors__item {
+      @include adaptiveValue("width", 30, 20);
+      @include adaptiveValue("height", 30, 20);
+
+      &.active {
+        outline: 1.6px solid rgba(255, 255, 255, 0.75);
+        outline-offset: 4px;
+      }
+
+      &.disabled {
+        outline: 2.4px solid #f9f9f9;
+        opacity: 1;
+      }
+    }
+  }
+}

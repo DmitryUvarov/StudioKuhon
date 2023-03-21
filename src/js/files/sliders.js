@@ -211,6 +211,49 @@ function initSliders() {
 
 		});
 	}
+	if (document.querySelector('.similar__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.similar__slider', {
+
+			modules: [Navigation, Pagination, Grid],
+			observer: true,
+			observeParents: true,
+			speed: 800,
+
+			// Пагинация
+			pagination: {
+				el: '.similar__slider .similar__progressbar',
+				type: "progressbar",
+				progressbarFillClass: 'progressbar-trumb'
+			},
+			navigation: {
+				nextEl: '.similar__slider .button-next',
+				prevEl: '.similar__slider .button-prev',
+			},
+
+			// Брейкпоинты
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1.3,
+					spaceBetween: 15,
+				},
+				478: {
+					slidesPerView: 1.8,
+					spaceBetween: 20,
+				},
+				768: {
+					slidesPerView: 2.6,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3.15,
+					spaceBetween: 30,
+				},
+			},
+
+		});
+	}
 
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
